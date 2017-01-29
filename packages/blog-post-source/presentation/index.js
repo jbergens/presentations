@@ -44,10 +44,41 @@ const theme = createTheme({
   secondary: "Helvetica"
 });
 
+const slidesImports = [
+  import("./slides/1"),
+  import("./slides/2"),
+  import("./slides/3"),
+  import("./slides/4")
+];
+
 export default class Presentation extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      slides: Array(slidesImports.length).fill(<Slide key="loading" />)
+    };
+  }
+
+  componentDidMount() {
+    const importedSlides = [];
+    Promise.all(slidesImports).then((slidesImportsResolved) => {
+      slidesImportsResolved.forEach((slide) => {
+        importedSlides.push(slide.default);
+      });
+      this.setState({ slides: importedSlides });
+    });
+  }
+
   render() {
+    const { slides } = this.state;
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+        {
+          slides.map((slide, index) => {
+            return React.cloneElement(slide, {key: index});
+          })
+        }
       </Deck>
     );
   }
