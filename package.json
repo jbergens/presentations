@@ -1,0 +1,25 @@
+{
+  "name": "mikenikles-presentations",
+  "version": "0.0.1",
+  "description": "Public presentations by @mikenikles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikenikles/presentations.git"
+  },
+  "keywords": [
+    "presentations"
+  ],
+  "author": "Mike Nikles, @mikenikles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikenikles/presentations/issues"
+  },
+  "homepage": "https://github.com/mikenikles/presentations#readme",
+  "devDependencies": {
+    "lerna": "2.0.0-beta.34"
+  }
+}
