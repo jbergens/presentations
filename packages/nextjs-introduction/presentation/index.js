@@ -18,15 +18,14 @@ require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 const images = {
-  bg: require("../assets/bg_skyline.svg")
 };
 
 preloader(images);
 
 const theme = createTheme({
   primary: "black",
-  secondary: "white",
-  tertiary: "#03A9FC",
+  secondary: "#03A9FC",
+  tertiary: "white",
   quartenary: "#CECECE"
 }, {
   primary: "Montserrat",
@@ -37,7 +36,12 @@ const slidesImports = [
   import("./slides/1"),
   import("./slides/2"),
   import("./slides/3"),
-  import("./slides/4")
+  import("./slides/4"),
+  import("./slides/5"),
+  import("./slides/6"),
+  import("./slides/7"),
+  import("./slides/8"),
+  import("./slides/9")
 ];
 
 export default class Presentation extends React.Component {
@@ -62,8 +66,7 @@ export default class Presentation extends React.Component {
     const { slides } = this.state;
     return (
       <Deck
-        autoplay
-        progress="none"
+        progress="pacman"
         theme={theme}
         transition={["fade"]}
         transitionDuration={500}

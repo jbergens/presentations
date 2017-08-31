@@ -1,14 +1,15 @@
 import React from "react";
-import { Heading, Slide, Text } from "spectacle";
+import { Appear, Heading, List, ListItem, Slide } from "spectacle";
 
 export default (
-    <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={6} textColor="primary" caps>Typography</Heading>
-        <Heading size={1} textColor="secondary">Heading 1</Heading>
-        <Heading size={2} textColor="secondary">Heading 2</Heading>
-        <Heading size={3} textColor="secondary">Heading 3</Heading>
-        <Heading size={4} textColor="secondary">Heading 4</Heading>
-        <Heading size={5} textColor="secondary">Heading 5</Heading>
-        <Text size={6} textColor="secondary">Standard text</Text>
-    </Slide>
+  <Slide transition={["zoom", "slide"]} bgColor="primary" textColor="tertiary">
+    <Heading size={2} textColor="secondary" caps>Agenda</Heading>
+    <List>
+      <Appear><ListItem>Who am I?</ListItem></Appear>
+      <Appear><ListItem>React - DIY</ListItem></Appear>
+      <Appear><ListItem>React - Boilerplates</ListItem></Appear>
+      <Appear><ListItem>React - THE boilerplate</ListItem></Appear>
+      <Appear><ListItem>Next.js</ListItem></Appear>
+    </List>
+  </Slide>
 );
